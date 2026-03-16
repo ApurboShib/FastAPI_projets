@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Path, HTTPException
 import json
 
 
@@ -34,10 +34,10 @@ def view():
 ## create an endpoints to see specific patients info.
 ## dynamic routes (parramsa)
 @app.get("/patients/{patients_id}")
-def view_patients(patients_id: str):
+def view_patients(patients_id: str = Path(..., description = "ID of the patients of the DB", example = "P001")):
     ## load the full data.
     data = load_data()
     ## now we write the conditions.
     if patients_id in data:
         return  data[patients_id]
-    return {"error" : "The patients is not found here.."}
+    raise HTTPException(status_code = 404, detail = "Patients is not found!")
