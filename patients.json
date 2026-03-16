@@ -1,0 +1,202 @@
+{
+    "P001": {
+        "name": "Rahim Uddin",
+        "city": "Dhaka",
+        "age": 28,
+        "gender": "male",
+        "height": 1.70,
+        "weight": 75,
+        "bmi": 25.95,
+        "verdict": "Overweight"
+    },
+    "P002": {
+        "name": "Karim Ahmed",
+        "city": "Chittagong",
+        "age": 35,
+        "gender": "male",
+        "height": 1.72,
+        "weight": 68,
+        "bmi": 22.99,
+        "verdict": "Normal"
+    },
+    "P003": {
+        "name": "Nusrat Jahan",
+        "city": "Sylhet",
+        "age": 24,
+        "gender": "female",
+        "height": 1.60,
+        "weight": 50,
+        "bmi": 19.53,
+        "verdict": "Normal"
+    },
+    "P004": {
+        "name": "Farhana Akter",
+        "city": "Dhaka",
+        "age": 31,
+        "gender": "female",
+        "height": 1.55,
+        "weight": 70,
+        "bmi": 29.14,
+        "verdict": "Overweight"
+    },
+    "P005": {
+        "name": "Mahmud Hasan",
+        "city": "Rajshahi",
+        "age": 40,
+        "gender": "male",
+        "height": 1.75,
+        "weight": 95,
+        "bmi": 31.02,
+        "verdict": "Obese"
+    },
+    "P006": {
+        "name": "Tanvir Islam",
+        "city": "Khulna",
+        "age": 29,
+        "gender": "male",
+        "height": 1.73,
+        "weight": 72,
+        "bmi": 24.05,
+        "verdict": "Normal"
+    },
+    "P007": {
+        "name": "Sumaiya Rahman",
+        "city": "Barisal",
+        "age": 22,
+        "gender": "female",
+        "height": 1.58,
+        "weight": 45,
+        "bmi": 18.03,
+        "verdict": "Underweight"
+    },
+    "P008": {
+        "name": "Imran Hossain",
+        "city": "Dhaka",
+        "age": 37,
+        "gender": "male",
+        "height": 1.78,
+        "weight": 88,
+        "bmi": 27.77,
+        "verdict": "Overweight"
+    },
+    "P009": {
+        "name": "Mim Akter",
+        "city": "Sylhet",
+        "age": 26,
+        "gender": "female",
+        "height": 1.62,
+        "weight": 55,
+        "bmi": 20.96,
+        "verdict": "Normal"
+    },
+    "P010": {
+        "name": "Sabbir Rahman",
+        "city": "Chittagong",
+        "age": 34,
+        "gender": "male",
+        "height": 1.76,
+        "weight": 92,
+        "bmi": 29.70,
+        "verdict": "Overweight"
+    },
+    "P011": {
+        "name": "Rifat Hossain",
+        "city": "Dhaka",
+        "age": 30,
+        "gender": "male",
+        "height": 1.74,
+        "weight": 85,
+        "bmi": 28.07,
+        "verdict": "Overweight"
+    },
+    "P012": {
+        "name": "Ayesha Sultana",
+        "city": "Rajshahi",
+        "age": 27,
+        "gender": "female",
+        "height": 1.60,
+        "weight": 60,
+        "bmi": 23.44,
+        "verdict": "Normal"
+    },
+    "P013": {
+        "name": "Nayeem Islam",
+        "city": "Sylhet",
+        "age": 21,
+        "gender": "male",
+        "height": 1.68,
+        "weight": 52,
+        "bmi": 18.42,
+        "verdict": "Normal"
+    },
+    "P014": {
+        "name": "Sharmin Akter",
+        "city": "Khulna",
+        "age": 33,
+        "gender": "female",
+        "height": 1.57,
+        "weight": 75,
+        "bmi": 30.43,
+        "verdict": "Obese"
+    },
+    "P015": {
+        "name": "Jahid Hasan",
+        "city": "Dhaka",
+        "age": 39,
+        "gender": "male",
+        "height": 1.80,
+        "weight": 100,
+        "bmi": 30.86,
+        "verdict": "Obese"
+    },
+    "P016": {
+        "name": "Tasnia Ahmed",
+        "city": "Chittagong",
+        "age": 23,
+        "gender": "female",
+        "height": 1.59,
+        "weight": 47,
+        "bmi": 18.59,
+        "verdict": "Normal"
+    },
+    "P017": {
+        "name": "Arif Rahman",
+        "city": "Barisal",
+        "age": 36,
+        "gender": "male",
+        "height": 1.72,
+        "weight": 78,
+        "bmi": 26.37,
+        "verdict": "Overweight"
+    },
+    "P018": {
+        "name": "Faria Islam",
+        "city": "Sylhet",
+        "age": 25,
+        "gender": "female",
+        "height": 1.63,
+        "weight": 58,
+        "bmi": 21.82,
+        "verdict": "Normal"
+    },
+    "P019": {
+        "name": "Habib Uddin",
+        "city": "Rangpur",
+        "age": 41,
+        "gender": "male",
+        "height": 1.69,
+        "weight": 90,
+        "bmi": 31.51,
+        "verdict": "Obese"
+    },
+    "P020": {
+        "name": "Mitu Akter",
+        "city": "Dhaka",
+        "age": 28,
+        "gender": "female",
+        "height": 1.56,
+        "weight": 44,
+        "bmi": 18.08,
+        "verdict": "Underweight"
+    }
+}
