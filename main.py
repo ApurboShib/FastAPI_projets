@@ -13,6 +13,7 @@ def load_data():
 
     return data
 
+
 @app.get("/")
 def read_root():
     return {"messege": "Patients Managements System API"}
@@ -28,3 +29,15 @@ def about():
 def view():
     data = load_data()
     return data
+
+
+## create an endpoints to see specific patients info.
+## dynamic routes (parramsa)
+@app.get("/patients/{patients_id}")
+def view_patients(patients_id: str):
+    ## load the full data.
+    data = load_data()
+    ## now we write the conditions.
+    if patients_id in data:
+        return  data[patients_id]
+    return {"error" : "The patients is not found here.."}
