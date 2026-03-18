@@ -2,7 +2,7 @@ from fastapi import FastAPI, Path, HTTPException, Query
 import json
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field, computed_field
-from typing import Annotated, Literal
+from typing import Annotated, Literal, Optional
 
 app = FastAPI()
 
@@ -26,6 +26,18 @@ def bmi(self)-> float:
     bmi = round(self.weight/(self.height**2),2)
     return bmi
 
+
+
+# step-13 :  build an another pydantic model for update.
+
+class Update_patient(BaseModel):
+    id:Annotated[Optional[str], Field(default=None)]
+    name: Annotated[Optional[str], Field(default=None)]
+    city: Annotated[Optional[str], Field(default=None)]
+    age: Annotated[Optional[int], Field(default=None, gt=0)]
+    gender: Annotated[Optional[Literal['male', 'female', 'others']], Field(default=None)]
+    height: Annotated[Optional[float], Field(default=None, gt=0)]
+    weight: Annotated[Optional[float], Field(default=None, gt=0)]
 
 ## now after calculating the bmi successfully now we need add a  verdict (overwight, underweight, normal..) 
 # step-10 : to decide the verdict
@@ -73,7 +85,7 @@ def view():
 
 # step-05 : create endpoints to see the data dynamically.
 ## create an endpoints to see specific patients info.
-## dynamic routes (parramsa)
+## dynamic routes (parrams)
 @app.get("/patients/{patients_id}")
 def view_patients(patients_id: str = Path(..., description = "ID of the patients of the DB", examples = "P001")):
     ## load the full data.
@@ -123,3 +135,37 @@ def create_patients(patient : Patient):
     # now we need to save into the JSON file
     save_data(data)
     return JSONResponse(status_code = 201, content = {"messege" : "Patients Created Successfully!"})
+
+
+
+# step-14 : build the endpoint for uodate.
+
+@app.put('/edit')
+def update_patient_info(patient_id:str, update_patient:Update_patient):
+    data = load_data()
+    if patient_id not in data:
+        raise HTTPException(status_code = 404, detail="Patient not found!")
+    existing_patients_info = data[patient_id]
+    # now the existing_patients_info in a object so futher operation er jonno eitake dictonary te convert kore nibo.
+    # exclude_unset= True (eita na likhle amra full dictonary paitam but eita lekhar por just change data gula ashbe)
+    update_data = update_patient.model_dump(exclude_unset=True)
+    for key, value in update_data.items():
+        existing_patients_info[key] = value
+        
+    # this field was missing but it's required feilds. so we need to update this things fast.
+    existing_patients_info['id'] = patient_id
+    # now need to convert this onto the pydantic object.
+    parient_pydantic_object = Patient(**existing_patients_info)
+    # now pydantic object -> dict and store the (existing_patients_info)
+    existing_patients_info = parient_pydantic_object.model_dump(exclude={'id'})
+
+    # now update the existing data to new data.
+    data[patient_id] = existing_patients_info
+
+    # now save the informations
+    save_data(data)
+
+    return JSONResponse(status_code=200, content={'message' : 'Patients info is updated '})
+
+
+
