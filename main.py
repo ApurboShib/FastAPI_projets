@@ -91,7 +91,7 @@ def view_patients(patients_id: str = Path(..., description = "ID of the patients
     ## load the full data.
     data = load_data()
     ## now we write the conditions.
-    if patients_id in data:
+    if patients_id  in data:
         return  data[patients_id]
     raise HTTPException(status_code = 404, detail = "Patients is not found!")
 
